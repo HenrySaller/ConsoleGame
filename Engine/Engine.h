@@ -9,16 +9,18 @@ namespace engine
 	
 	class Engine
 	{
-		Window m_window;
-		Renderer m_renderer;
-		Application m_app;
+		Window *m_window;
+		Renderer *m_renderer;
+		Application *m_app;
 	public:
 		Engine() = delete;
-		Engine(Window& window);
+		Engine(Window* window);
+		~Engine();
 
-		void init(void(*gameLoop)(Engine*, char));
+		void init(void(*gameLoop)(Engine*, int*));
 		void shutdown();
-		void render(char* output);
+
+		Renderer* getRenderer();
 	};
 
 }

@@ -5,7 +5,7 @@
 class Character
 {
 	std::string name;
-	unsigned int hp;
+	int hp;
 public:
 
 };

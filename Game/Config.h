@@ -2,8 +2,8 @@
 
 struct Config
 {
-	unsigned int window_width;
-	unsigned int window_height;
+	int window_width;
+	int window_height;
 
 	Config();
 };

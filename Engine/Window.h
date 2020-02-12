@@ -1,13 +1,24 @@
 #pragma once
 
+#include <PDCurses/curses.h>
+
 namespace engine {
 
 	class Window
 	{
-		unsigned int m_x, m_y;
+		int m_x, m_y;
+		WINDOW *m_window;
 	public:
 		Window() = delete;
-		Window(unsigned int& x, unsigned int& y);
+		Window(int& x, int& y);
+		~Window();
+
+		int getWidth();
+		int getHeight();
+
+		WINDOW* getWindow();
+
+		void init();
 	};
 
 }

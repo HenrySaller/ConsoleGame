@@ -1,5 +1,7 @@
 #pragma once
 
+#include <PDCurses/curses.h>
+
 namespace engine {
 
 	class Application
@@ -7,10 +9,13 @@ namespace engine {
 		bool m_running;
 	public:
 		Application();
+
+		bool isRunning();
+
 		void start();
 		void stop();
-		bool isRunning();
-		char listen();
+		
+		int listen();
 	};
 
 }
